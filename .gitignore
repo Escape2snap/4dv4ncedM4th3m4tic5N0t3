@@ -1,0 +1,16 @@
+# 本地搜索缓存
+.fileSearch/
+
+# 导出产物
+*.pdf
+output/
+
+# 临时文件
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+__pycache__/
+*.pyc
+.DS_Store
