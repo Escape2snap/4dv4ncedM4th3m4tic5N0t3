@@ -3,6 +3,10 @@
 
 # 导出产物
 *.pdf
+*.a4.tex
+*.b5.tex
+*.notoc.tex
+*.latest.*.tex
 output/
 
 # 临时文件
