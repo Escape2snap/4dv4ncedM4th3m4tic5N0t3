@@ -1,20 +1,28 @@
 # 本地搜索缓存
 .fileSearch/
 
-# 导出产物
+# 导出产物（上游默认输出到 ./output；用 -o . 时可能落在根目录）
+output/
+_build/
 *.pdf
 *.a4.tex
 *.b5.tex
 *.notoc.tex
 *.latest.*.tex
-output/
 
-# 临时文件
+# LaTeX 临时文件
 *.aux
 *.log
 *.out
 *.toc
+*.fls
+*.fdb_latexmk
+*.xdv
 *.synctex.gz
+*.bbl
+*.blg
+
+# Python / 系统
 __pycache__/
 *.pyc
 .DS_Store
