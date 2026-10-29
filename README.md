@@ -9,6 +9,17 @@
 - `figures/`：专题笔记的插图；运行 `python3 figures/make_figures.py` 可重新生成。
 - `高等数学_课件/`：10 个原始课件 PPT。
 
+## 导出
+
+用上游 note4Note 的 `export.py` 导出 PDF。插图在 `figures/`，需要让 xelatex 能按相对路径找到它们：
+
+```bash
+cd /path/to/notes
+TEXINPUTS="$PWD//:" python3 ~/note4Note/tools/export.py --no-toc 高等数学-专题
+```
+
+（`~/note4Note` 为上游仓库的克隆位置。）产物写入 `output/`，已加入 `.gitignore`；不写笔记名则导出本目录的全部笔记。
+
 ## 上游
 
 整理与导出流程源自 [note4Note](https://github.com/Escape2snap/note4Note)。
