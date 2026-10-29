@@ -95,6 +95,15 @@ def plot_pieces(ax, f, xs, color, lw=2.6, n=6000):
     ax.plot(x, y, color=color, lw=lw, zorder=5, solid_capstyle="round")
 
 
+def set_print_width(path: str, inches: float) -> None:
+    """把 PNG 的 DPI 元数据改成指定宽度（像素不变），供 LaTeX 按此宽度排版。"""
+    from PIL import Image
+
+    with Image.open(path) as im:
+        dpi = im.size[0] / inches
+        im.save(path, dpi=(dpi, dpi))
+
+
 def curve_label(ax, text, xy, color, fontsize=12):
     ax.text(
         *xy,
@@ -419,6 +428,8 @@ def make_inverse_symmetry():
     fig.tight_layout(pad=0.4)
     fig.savefig("figures/fig-inverse-symmetry.png", dpi=200)
     plt.close(fig)
+    # 方形插图缩到 4.5 in 打印宽度，避免在 LaTeX 里整页浮动
+    set_print_width("figures/fig-inverse-symmetry.png", 4.5)
 
 
 if __name__ == "__main__":
